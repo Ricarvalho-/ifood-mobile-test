@@ -14,7 +14,7 @@ protocol EmotionalAnalysisInteractorDelegate: class {
 
 protocol EmotionalAnalysisInteractor {
     func retrieveEmotionalAnalysis(for text: String)
-    init(with delegate: EmotionalAnalysisInteractorDelegate) // weak
+    init(with delegate: EmotionalAnalysisInteractorDelegate?) // weak
 }
 
 enum EmotionalAnalysisResult {

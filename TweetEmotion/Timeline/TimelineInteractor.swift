@@ -15,5 +15,5 @@ protocol TimelineInteractorDelegate: class {
 protocol TimelineInteractor {
     func retrieveMoreTweets()
     func cancelPendingTasks()
-    init(with delegate: TimelineInteractorDelegate) // weak
+    init(with delegate: TimelineInteractorDelegate?) // weak
 }

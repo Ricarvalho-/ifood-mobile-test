@@ -15,5 +15,5 @@ protocol UserSearchInteractorDelegate: class {
 
 protocol UserSearchInteractor {
     func retrieveUserInfo(for screenName: String)
-    init(with delegate: UserSearchInteractorDelegate) // weak
+    init(with delegate: UserSearchInteractorDelegate?) // weak
 }
