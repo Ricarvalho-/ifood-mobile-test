@@ -15,5 +15,6 @@ protocol UserSearchInteractorDelegate: class {
 
 protocol UserSearchInteractor {
     func retrieveUserInfo(for screenName: String)
+    func cancelPendingTasks()
     init(with delegate: UserSearchInteractorDelegate?) // weak
 }
