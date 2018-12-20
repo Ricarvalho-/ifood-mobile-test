@@ -11,11 +11,12 @@ import Foundation
 protocol UserSearchView: class {
     func startUserLoading()
     func stopUserLoading()
-    func setUserViewModel(_: UserViewModel)
+    func setUserViewModel(_ viewModel: UserViewModel)
     func clearUserViewModel()
 }
 
 protocol UserSearchDelegate: class {
+    func didUpdateToValidUser(_ user: User)
     func didUpdateToPrivateUser()
     func didInvalidateCurrentUser()
     func didUpdateToNotFoundUser()
@@ -64,6 +65,8 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
 //        view?.setUserViewModel() // TODO: Add viewModel
         if user.protected ?? false {
             delegate?.didUpdateToPrivateUser()
+        } else {
+            delegate?.didUpdateToValidUser(user)
         }
     }
     

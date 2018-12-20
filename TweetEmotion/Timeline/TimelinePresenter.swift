@@ -68,16 +68,28 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
 }
 
 extension TimelinePresenterImpl: UserSearchDelegate {
+    func didUpdateToValidUser(_ user: User) {
+        view?.clearTweetViewModels()
+        view?.startTimelineLoading()
+//        view?.timelineViewModel = TimelineStatus.empty.viewModel()
+        interactor?.retrieveInitialTweets(for: user)
+    }
+    
     func didUpdateToPrivateUser() {
-        stopLoadingAndSetViewModel(for: .privateUser)
+        clearTweetsStopLoadingAndSetViewModel(for: .privateUser)
     }
     
     func didInvalidateCurrentUser() {
-        stopLoadingAndSetViewModel(for: .empty)
+        clearTweetsStopLoadingAndSetViewModel(for: .empty)
     }
     
     func didUpdateToNotFoundUser() {
-        stopLoadingAndSetViewModel(for: .userNotFound)
+        clearTweetsStopLoadingAndSetViewModel(for: .userNotFound)
+    }
+    
+    private func clearTweetsStopLoadingAndSetViewModel(for status: TimelineStatus) {
+        stopLoadingAndSetViewModel(for: status)
+        view?.clearTweetViewModels()
     }
 }
 

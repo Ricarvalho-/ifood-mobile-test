@@ -13,6 +13,7 @@ protocol TimelineInteractorDelegate: class {
 }
 
 protocol TimelineInteractor {
+    func retrieveInitialTweets(for user: User)
     func retrieveMoreTweets()
     func cancelPendingTasks()
     init(with delegate: TimelineInteractorDelegate?) // weak
