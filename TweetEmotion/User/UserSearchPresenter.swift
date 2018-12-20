@@ -15,7 +15,13 @@ protocol UserSearchView: class {
     func clearUserViewModel()
 }
 
-protocol UserSearchPresenter {
+protocol UserSearchDelegate { // TimelinePresenter
+    func didUpdateToPrivateUser()
+    func didInvalidateCurrentUser()
+    func didUpdateToNotFoundUser()
+}
+
+protocol UserSearchPresenter { // init from TimelineViewController, pass SearchView and TimelinePresenter
     func didChangeSearchTerm(_ searchTerm: String)
-    init(with view: UserSearchView) // weak
+    init(with view: UserSearchView, delegate: UserSearchDelegate?) // weak
 }
