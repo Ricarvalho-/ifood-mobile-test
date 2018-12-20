@@ -13,10 +13,11 @@ protocol TweetViewModel {
     var text: String { get }
     var favorites: Int { get }
     var retweets: Int { get }
-    var emotionalState: TweetEmotionalStatus { get }
+    var emotionalStatus: TweetEmotionalStatus { get }
 }
 
 enum TweetEmotionalStatus {
+    case none
     case loading
     case positive
     case neutral

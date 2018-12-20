@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct user: Codable {
+struct User: Codable {
     let name: String?
     let screenName: String?
     let protected: Bool?

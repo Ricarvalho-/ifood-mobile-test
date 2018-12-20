@@ -20,10 +20,10 @@ struct Tweet: Codable {
     
     var creationDate: Date? {
         guard let creationTimeUTC = creationTimeUTC else { return nil }
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy"
-        return dateFormatter.date(from: creationTimeUTC)
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy"
+        return formatter.date(from: creationTimeUTC)
     }
     
     var text: String? {
@@ -39,8 +39,10 @@ struct Tweet: Codable {
         case truncated
         case fullVersion = "extended_tweet"
     }
-    
-    private struct TweetExtension: Codable {
+}
+
+private extension Tweet {
+    struct TweetExtension: Codable {
         let text: String
         
         private enum CodingKeys: String, CodingKey {
