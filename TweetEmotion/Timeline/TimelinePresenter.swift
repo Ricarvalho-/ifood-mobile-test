@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TimelineView: class {
-//    var timelineViewModel: TimelineViewModel { get set }
+    var timelineViewModel: TimelineViewModel { get set }
     func startTimelineLoading()
     func stopTimelineLoading()
     func addTweetViewModels(_: [TweetViewModel])

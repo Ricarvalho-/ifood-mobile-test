@@ -23,6 +23,7 @@
 		BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */; };
 		BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */; };
 		BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */; };
+		BDF2A24C21CB1F4400FD4CD9 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */; };
 		BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24D21CB392700FD4CD9 /* Tweet.swift */; };
 		BDF2A25021CB393600FD4CD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24F21CB393600FD4CD9 /* User.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchInteractor.swift; sourceTree = "<group>"; };
 		BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		BDF2A24D21CB392700FD4CD9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		BDF2A24F21CB393600FD4CD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 			children = (
 				BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */,
 				BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */,
+				BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF2A24021CB1CD700FD4CD9 /* UserSearchPresenter.swift in Sources */,
+				BDF2A24C21CB1F4400FD4CD9 /* TimelineViewModel.swift in Sources */,
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
 				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
 				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
