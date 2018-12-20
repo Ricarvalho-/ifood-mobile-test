@@ -17,6 +17,8 @@
 		BDF0E56021C8577400B3E5C9 /* TweetEmotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E55F21C8577400B3E5C9 /* TweetEmotionTests.swift */; };
 		BDF0E56B21C8577400B3E5C9 /* TweetEmotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E56A21C8577400B3E5C9 /* TweetEmotionUITests.swift */; };
 		BDF0E58321C8A07D00B3E5C9 /* TweetDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E58221C8A07D00B3E5C9 /* TweetDetailPresenter.swift */; };
+		BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */; };
+		BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */; };
 		BDF2A24021CB1CD700FD4CD9 /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A23F21CB1CD700FD4CD9 /* UserSearchPresenter.swift */; };
 		BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */; };
 		BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */; };
@@ -59,6 +61,8 @@
 		BDF0E56A21C8577400B3E5C9 /* TweetEmotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetEmotionUITests.swift; sourceTree = "<group>"; };
 		BDF0E56C21C8577400B3E5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF0E58221C8A07D00B3E5C9 /* TweetDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailPresenter.swift; sourceTree = "<group>"; };
+		BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinePresenter.swift; sourceTree = "<group>"; };
+		BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineInteractor.swift; sourceTree = "<group>"; };
 		BDF2A23F21CB1CD700FD4CD9 /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
 		BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchInteractor.swift; sourceTree = "<group>"; };
 		BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */,
 				BDF0E55621C8577400B3E5C9 /* Info.plist */,
 				BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */,
+				BDF2A23821CB1BD000FD4CD9 /* Timeline */,
 				BDF2A23921CB1C3C00FD4CD9 /* Tweet */,
 				BDF2A23A21CB1C4D00FD4CD9 /* User */,
 			);
@@ -144,6 +149,15 @@
 				BDF0E56C21C8577400B3E5C9 /* Info.plist */,
 			);
 			path = TweetEmotionUITests;
+			sourceTree = "<group>";
+		};
+		BDF2A23821CB1BD000FD4CD9 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */,
+				BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 		BDF2A23921CB1C3C00FD4CD9 /* Tweet */ = {
@@ -301,11 +315,13 @@
 			files = (
 				BDF2A24021CB1CD700FD4CD9 /* UserSearchPresenter.swift in Sources */,
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
+				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
 				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
 				BDF2A25021CB393600FD4CD9 /* User.swift in Sources */,
 				BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */,
 				BDF0E58321C8A07D00B3E5C9 /* TweetDetailPresenter.swift in Sources */,
 				BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */,
+				BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */,
 				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
 				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
 				BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */,
