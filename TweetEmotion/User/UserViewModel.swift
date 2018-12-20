@@ -11,5 +11,5 @@ import Foundation
 protocol UserViewModel {
     var name: String { get }
     var verified: Bool { get }
-    var profileImageURL: URL { get }
+    var profileImageURL: URL? { get }
 }

@@ -62,7 +62,7 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
     
     func didRetrieveUser(_ user: User) {
         view?.stopUserLoading()
-//        view?.setUserViewModel() // TODO: Add viewModel
+        view?.setUserViewModel(ViewModel.init(from: user))
         if user.protected ?? false {
             delegate?.didUpdateToPrivateUser()
         } else {
@@ -74,5 +74,21 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
         view?.stopUserLoading()
         view?.clearUserViewModel()
         delegate?.didUpdateToNotFoundUser()
+    }
+    
+    private struct ViewModel: UserViewModel {
+        let name: String
+        let verified: Bool
+        let profileImageURL: URL?
+        
+        init(from user: User) {
+            name = user.name ?? ""
+            verified = user.verified ?? false
+            if let url = user.profileImageURL {
+                profileImageURL = URL(string: url)
+            } else {
+                profileImageURL = nil
+            }
+        }
     }
 }
