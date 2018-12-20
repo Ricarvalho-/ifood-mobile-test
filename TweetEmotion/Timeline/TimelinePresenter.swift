@@ -44,7 +44,7 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
 //        view?.timelineViewModel = status.viewModel()
     }
     
-    struct ViewModel: TweetViewModel {
+    private struct ViewModel: TweetViewModel {
         let date, text: String
         let favorites, retweets: Int
         let emotionalStatus: TweetEmotionalStatus
@@ -79,12 +79,12 @@ extension TimelinePresenterImpl: UserSearchDelegate {
         clearTweetsStopLoadingAndSetViewModel(for: .privateUser)
     }
     
-    func didInvalidateCurrentUser() {
-        clearTweetsStopLoadingAndSetViewModel(for: .empty)
-    }
-    
     func didUpdateToNotFoundUser() {
         clearTweetsStopLoadingAndSetViewModel(for: .userNotFound)
+    }
+    
+    func didInvalidateCurrentUser() {
+        clearTweetsStopLoadingAndSetViewModel(for: .empty)
     }
     
     private func clearTweetsStopLoadingAndSetViewModel(for status: TimelineStatus) {

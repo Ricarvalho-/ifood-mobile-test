@@ -36,7 +36,7 @@ class TweetDetailPresenterImpl: TweetDetailPresenter, EmotionalAnalysisInteracto
         view?.tweetViewModel = ViewModel.init(with: viewModel, status: .loading)
     }
     
-    struct ViewModel: TweetViewModel {
+    private struct ViewModel: TweetViewModel {
         let date, text: String
         let favorites, retweets: Int
         let emotionalStatus: TweetEmotionalStatus

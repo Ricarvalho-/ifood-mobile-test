@@ -18,8 +18,8 @@ protocol UserSearchView: class {
 protocol UserSearchDelegate: class {
     func didUpdateToValidUser(_ user: User)
     func didUpdateToPrivateUser()
-    func didInvalidateCurrentUser()
     func didUpdateToNotFoundUser()
+    func didInvalidateCurrentUser()
 }
 
 protocol UserSearchPresenter { // init from TimelineViewController, pass SearchView and TimelinePresenter
