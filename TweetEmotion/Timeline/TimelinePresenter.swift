@@ -12,7 +12,7 @@ protocol TimelineView: class {
     var timelineViewModel: TimelineViewModel { get set }
     func startTimelineLoading()
     func stopTimelineLoading()
-    func addTweetViewModels(_: [TweetViewModel])
+    func addTweetViewModels(_ viewModels: [TweetViewModel])
     func clearTweetViewModels()
 }
 
@@ -30,11 +30,18 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     }
     
     func loadMoreTweets() {
+        view?.startTimelineLoading()
         interactor?.retrieveMoreTweets()
     }
     
     func didRetrieveTweets(_ tweets: [Tweet]) {
+        stopLoadingAndSetViewModel(for: .filled)
         view?.addTweetViewModels(tweets.map { ViewModel.init(from: $0) })
+    }
+    
+    private func stopLoadingAndSetViewModel(for status: TimelineStatus) {
+        view?.stopTimelineLoading()
+//        view?.timelineViewModel = status.viewModel()
     }
     
     struct ViewModel: TweetViewModel {
@@ -58,4 +65,40 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
             }
         }
     }
+}
+
+extension TimelinePresenterImpl: UserSearchDelegate {
+    func didUpdateToPrivateUser() {
+        stopLoadingAndSetViewModel(for: .privateUser)
+    }
+    
+    func didInvalidateCurrentUser() {
+        stopLoadingAndSetViewModel(for: .empty)
+    }
+    
+    func didUpdateToNotFoundUser() {
+        stopLoadingAndSetViewModel(for: .userNotFound)
+    }
+}
+
+private enum TimelineStatus {
+    case empty
+    case filled
+    case privateUser
+    case userNotFound
+    
+    /*
+    func viewModel() -> TimelineViewModel {
+        switch self {
+        case .empty:
+            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.lightGray)
+        case .filled:
+            return TimelineViewModel(message: nil, image: nil, color: UIColor.white)
+        case .privateUser:
+            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.gray)
+        case .userNotFound:
+            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.orange)
+        }
+    }
+    */
 }
