@@ -15,6 +15,8 @@
 		BDF0E55521C8577400B3E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */; };
 		BDF0E56021C8577400B3E5C9 /* TweetEmotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E55F21C8577400B3E5C9 /* TweetEmotionTests.swift */; };
 		BDF0E56B21C8577400B3E5C9 /* TweetEmotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E56A21C8577400B3E5C9 /* TweetEmotionUITests.swift */; };
+		BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */; };
+		BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BDF0E56621C8577400B3E5C9 /* TweetEmotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweetEmotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E56A21C8577400B3E5C9 /* TweetEmotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetEmotionUITests.swift; sourceTree = "<group>"; };
 		BDF0E56C21C8577400B3E5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
+		BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */,
 				BDF0E55621C8577400B3E5C9 /* Info.plist */,
 				BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */,
+				BDF2A23921CB1C3C00FD4CD9 /* Tweet */,
+				BDF2A23A21CB1C4D00FD4CD9 /* User */,
 			);
 			path = TweetEmotion;
 			sourceTree = "<group>";
@@ -126,6 +132,22 @@
 				BDF0E56C21C8577400B3E5C9 /* Info.plist */,
 			);
 			path = TweetEmotionUITests;
+			sourceTree = "<group>";
+		};
+		BDF2A23921CB1C3C00FD4CD9 /* Tweet */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */,
+			);
+			path = Tweet;
+			sourceTree = "<group>";
+		};
+		BDF2A23A21CB1C4D00FD4CD9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
+				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
 				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
 				BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */,
 				BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */,
