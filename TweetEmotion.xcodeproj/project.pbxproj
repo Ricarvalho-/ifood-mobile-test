@@ -17,6 +17,8 @@
 		BDF0E56B21C8577400B3E5C9 /* TweetEmotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E56A21C8577400B3E5C9 /* TweetEmotionUITests.swift */; };
 		BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */; };
 		BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */; };
+		BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24D21CB392700FD4CD9 /* Tweet.swift */; };
+		BDF2A25021CB393600FD4CD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24F21CB393600FD4CD9 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		BDF0E56C21C8577400B3E5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewModel.swift; sourceTree = "<group>"; };
 		BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		BDF2A24D21CB392700FD4CD9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		BDF2A24F21CB393600FD4CD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		BDF2A23921CB1C3C00FD4CD9 /* Tweet */ = {
 			isa = PBXGroup;
 			children = (
+				BDF2A24D21CB392700FD4CD9 /* Tweet.swift */,
 				BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */,
 			);
 			path = Tweet;
@@ -145,6 +150,7 @@
 		BDF2A23A21CB1C4D00FD4CD9 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				BDF2A24F21CB393600FD4CD9 /* User.swift */,
 				BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */,
 			);
 			path = User;
@@ -282,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
+				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
+				BDF2A25021CB393600FD4CD9 /* User.swift in Sources */,
 				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
 				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
 				BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */,
