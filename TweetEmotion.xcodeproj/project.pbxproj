@@ -10,6 +10,7 @@
 		BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */; };
 		BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */; };
 		BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E721CC6F580050EC71 /* ChainManager.swift */; };
+		BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
 		BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54921C8577200B3E5C9 /* ViewController.swift */; };
 		BDF0E54D21C8577200B3E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E54B21C8577200B3E5C9 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalAnalysisInteractor.swift; sourceTree = "<group>"; };
 		BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmotionalAnalysisWorker.swift; sourceTree = "<group>"; };
 		BD9BB0E721CC6F580050EC71 /* ChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainManager.swift; sourceTree = "<group>"; };
+		BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSearchWorker.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF0E54921C8577200B3E5C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			isa = PBXGroup;
 			children = (
 				BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		BD9BB0E121CC4B300050EC71 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -203,6 +213,7 @@
 				BDF2A23F21CB1CD700FD4CD9 /* UserSearchPresenter.swift */,
 				BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */,
 				BDF2A24721CB1EA300FD4CD9 /* UserViewModel.swift */,
+				BD9BB0E121CC4B300050EC71 /* Worker */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -352,7 +363,7 @@
 				BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */,
 				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
 				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
-				BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */,
+				BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */,
 				BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
