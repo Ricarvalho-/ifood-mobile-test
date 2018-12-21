@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */; };
+		BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */; };
 		BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E721CC6F580050EC71 /* ChainManager.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
 		BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54921C8577200B3E5C9 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalAnalysisInteractor.swift; sourceTree = "<group>"; };
+		BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmotionalAnalysisWorker.swift; sourceTree = "<group>"; };
 		BD9BB0E721CC6F580050EC71 /* ChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainManager.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD9BB0DF21CC4B050050EC71 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		BD9BB0E421CC6EFE0050EC71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 				BDF0E58221C8A07D00B3E5C9 /* TweetDetailPresenter.swift */,
 				BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */,
 				BDF2A24521CB1E9200FD4CD9 /* TweetViewModel.swift */,
+				BD9BB0DF21CC4B050050EC71 /* Worker */,
 			);
 			path = Tweet;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 			files = (
 				BDF2A24021CB1CD700FD4CD9 /* UserSearchPresenter.swift in Sources */,
 				BDF2A24C21CB1F4400FD4CD9 /* TimelineViewModel.swift in Sources */,
+				BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */,
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
 				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
 				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
