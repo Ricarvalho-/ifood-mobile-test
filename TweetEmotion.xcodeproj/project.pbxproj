@@ -12,8 +12,10 @@
 		BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E721CC6F580050EC71 /* ChainManager.swift */; };
 		BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */; };
 		BD9BB0EC21CC9A7A0050EC71 /* MockTimelineWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0EB21CC9A7A0050EC71 /* MockTimelineWorker.swift */; };
+		BD9BB0EE21CCA9FA0050EC71 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0ED21CCA9FA0050EC71 /* TimelineViewController.swift */; };
+		BD9BB0F021CCB9DF0050EC71 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0EF21CCB9DF0050EC71 /* TweetTableViewCell.swift */; };
+		BD9BB0F221CCBA8F0050EC71 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
-		BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54921C8577200B3E5C9 /* ViewController.swift */; };
 		BDF0E54D21C8577200B3E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E54B21C8577200B3E5C9 /* Main.storyboard */; };
 		BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */; };
 		BDF0E55221C8577400B3E5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E55121C8577400B3E5C9 /* Assets.xcassets */; };
@@ -55,9 +57,11 @@
 		BD9BB0E721CC6F580050EC71 /* ChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainManager.swift; sourceTree = "<group>"; };
 		BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSearchWorker.swift; sourceTree = "<group>"; };
 		BD9BB0EB21CC9A7A0050EC71 /* MockTimelineWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimelineWorker.swift; sourceTree = "<group>"; };
+		BD9BB0ED21CCA9FA0050EC71 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		BD9BB0EF21CCB9DF0050EC71 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BDF0E54921C8577200B3E5C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BDF0E54C21C8577200B3E5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDF0E54F21C8577200B3E5C9 /* TweetEmotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TweetEmotion.xcdatamodel; sourceTree = "<group>"; };
 		BDF0E55121C8577400B3E5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */,
-				BDF0E54921C8577200B3E5C9 /* ViewController.swift */,
 				BDF0E54B21C8577200B3E5C9 /* Main.storyboard */,
 				BDF0E55121C8577400B3E5C9 /* Assets.xcassets */,
 				BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */,
@@ -197,6 +200,7 @@
 		BDF2A23821CB1BD000FD4CD9 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BB0ED21CCA9FA0050EC71 /* TimelineViewController.swift */,
 				BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */,
 				BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */,
 				BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */,
@@ -208,6 +212,7 @@
 		BDF2A23921CB1C3C00FD4CD9 /* Tweet */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BB0EF21CCB9DF0050EC71 /* TweetTableViewCell.swift */,
 				BDF2A24D21CB392700FD4CD9 /* Tweet.swift */,
 				BDF0E58221C8A07D00B3E5C9 /* TweetDetailPresenter.swift */,
 				BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */,
@@ -220,6 +225,7 @@
 		BDF2A23A21CB1C4D00FD4CD9 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */,
 				BDF2A24F21CB393600FD4CD9 /* User.swift */,
 				BDF2A23F21CB1CD700FD4CD9 /* UserSearchPresenter.swift */,
 				BDF2A24321CB1D1400FD4CD9 /* UserSearchInteractor.swift */,
@@ -363,8 +369,11 @@
 				BDF2A24021CB1CD700FD4CD9 /* UserSearchPresenter.swift in Sources */,
 				BDF2A24C21CB1F4400FD4CD9 /* TimelineViewModel.swift in Sources */,
 				BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */,
+				BD9BB0F221CCBA8F0050EC71 /* UserSearchView.swift in Sources */,
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
 				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
+				BD9BB0F021CCB9DF0050EC71 /* TweetTableViewCell.swift in Sources */,
+				BD9BB0EE21CCA9FA0050EC71 /* TimelineViewController.swift in Sources */,
 				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
 				BDF2A25021CB393600FD4CD9 /* User.swift in Sources */,
 				BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */,
@@ -552,6 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C75S7MX2TX;
 				INFOPLIST_FILE = TweetEmotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C75S7MX2TX;
 				INFOPLIST_FILE = TweetEmotion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
