@@ -11,6 +11,7 @@
 		BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */; };
 		BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E721CC6F580050EC71 /* ChainManager.swift */; };
 		BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */; };
+		BD9BB0EC21CC9A7A0050EC71 /* MockTimelineWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0EB21CC9A7A0050EC71 /* MockTimelineWorker.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
 		BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54921C8577200B3E5C9 /* ViewController.swift */; };
 		BDF0E54D21C8577200B3E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E54B21C8577200B3E5C9 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEmotionalAnalysisWorker.swift; sourceTree = "<group>"; };
 		BD9BB0E721CC6F580050EC71 /* ChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainManager.swift; sourceTree = "<group>"; };
 		BD9BB0E921CC92D20050EC71 /* MockUserSearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserSearchWorker.swift; sourceTree = "<group>"; };
+		BD9BB0EB21CC9A7A0050EC71 /* MockTimelineWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTimelineWorker.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF0E54921C8577200B3E5C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			isa = PBXGroup;
 			children = (
 				BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		BD9BB0E021CC4B240050EC71 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BB0EB21CC9A7A0050EC71 /* MockTimelineWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 				BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */,
 				BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */,
 				BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */,
+				BD9BB0E021CC4B240050EC71 /* Worker */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 				BDF2A25021CB393600FD4CD9 /* User.swift in Sources */,
 				BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */,
 				BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */,
+				BD9BB0EC21CC9A7A0050EC71 /* MockTimelineWorker.swift in Sources */,
 				BDF0E58321C8A07D00B3E5C9 /* TweetDetailPresenter.swift in Sources */,
 				BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */,
 				BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */,
