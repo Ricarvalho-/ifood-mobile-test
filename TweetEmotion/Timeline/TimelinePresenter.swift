@@ -6,10 +6,10 @@
 //  Copyright © 2018 Ricardo Carvalho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol TimelineView: class {
-    var timelineViewModel: TimelineViewModel { get set }
+    var timelineViewModel: TimelineViewModel? { get set }
     func startTimelineLoading()
     func stopTimelineLoading()
     func addTweetViewModels(_ viewModels: [TweetViewModel])
@@ -23,15 +23,16 @@ protocol TimelinePresenter {
 
 class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     weak var view: TimelineView?
-    private var interactor: TimelineInteractor? // impl
+    private lazy var interactor = TimelineInteractorImpl(with: self)
     
     required init(with view: TimelineView) {
         self.view = view
+//        view.timelineViewModel = TimelineStatus.empty.viewModel
     }
     
     func loadMoreTweets() {
         view?.startTimelineLoading()
-        interactor?.retrieveMoreTweets()
+        interactor.retrieveMoreTweets()
     }
     
     func didRetrieveTweets(_ tweets: [Tweet]) {
@@ -41,7 +42,7 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     
     private func stopLoadingAndSetViewModel(for status: TimelineStatus) {
         view?.stopTimelineLoading()
-//        view?.timelineViewModel = status.viewModel()
+//        view?.timelineViewModel = status.viewModel
     }
     
     private struct ViewModel: TweetViewModel {
@@ -71,8 +72,8 @@ extension TimelinePresenterImpl: UserSearchDelegate {
     func didUpdateToValidUser(_ user: User) {
         view?.clearTweetViewModels()
         view?.startTimelineLoading()
-//        view?.timelineViewModel = TimelineStatus.empty.viewModel()
-        interactor?.retrieveInitialTweets(for: user)
+//        view?.timelineViewModel = TimelineStatus.empty.viewModel
+        interactor.retrieveInitialTweets(for: user)
     }
     
     func didUpdateToPrivateUser() {
@@ -100,7 +101,7 @@ private enum TimelineStatus {
     case userNotFound
     
     /*
-    func viewModel() -> TimelineViewModel {
+    var viewModel: TimelineViewModel {
         switch self {
         case .empty:
             return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.lightGray)

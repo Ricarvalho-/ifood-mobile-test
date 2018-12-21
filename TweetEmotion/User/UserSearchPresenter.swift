@@ -22,7 +22,7 @@ protocol UserSearchDelegate: class {
     func didInvalidateCurrentUser()
 }
 
-protocol UserSearchPresenter { // init from TimelineViewController, pass SearchView and TimelinePresenter
+protocol UserSearchPresenter {
     func didChangeSearchTerm(_ searchTerm: String)
     init(with view: UserSearchView, delegate: UserSearchDelegate?)
 }
@@ -30,8 +30,8 @@ protocol UserSearchPresenter { // init from TimelineViewController, pass SearchV
 class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate {
     weak var view: UserSearchView?
     weak var delegate: UserSearchDelegate?
-    var interactor: UserSearchInteractor? // impl
-    var schedulledTimer: Timer?
+    private lazy var interactor = UserSearchInteractorImpl(with: self)
+    private var schedulledTimer: Timer?
     
     required init(with view: UserSearchView, delegate: UserSearchDelegate?) {
         self.view = view
@@ -42,7 +42,7 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
         scheduleNewSearch(searchTerm)
         view?.stopUserLoading()
         view?.clearUserViewModel()
-        interactor?.cancelPendingTasks()
+        interactor.cancelPendingTasks()
         delegate?.didInvalidateCurrentUser()
     }
     
@@ -57,7 +57,7 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
     
     private func didElapsedDelayToPerform(search: String) {
         view?.startUserLoading()
-        interactor?.retrieveUserInfo(for: search)
+        interactor.retrieveUserInfo(for: search)
     }
     
     func didRetrieveUser(_ user: User) {

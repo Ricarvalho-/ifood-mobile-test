@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TweetDetailView: class {
-    var tweetViewModel: TweetViewModel { get set }
+    var tweetViewModel: TweetViewModel? { get set }
 }
 
 protocol TweetDetailPresenter {
@@ -19,7 +19,7 @@ protocol TweetDetailPresenter {
 
 class TweetDetailPresenterImpl: TweetDetailPresenter, EmotionalAnalysisInteractorDelegate {
     weak var view: TweetDetailView?
-    private var interactor: EmotionalAnalysisInteractor? // impl
+    private lazy var interactor = EmotionalAnalysisInteractorImpl(with: self)
     
     required init(with view: TweetDetailView) {
         self.view = view
@@ -28,12 +28,12 @@ class TweetDetailPresenterImpl: TweetDetailPresenter, EmotionalAnalysisInteracto
     func retrieveTweetEmotionalStatus() {
         guard let viewModel = view?.tweetViewModel else { return }
         view?.tweetViewModel = ViewModel.init(with: viewModel, status: .loading)
-        interactor?.retrieveEmotionalAnalysis(for: viewModel.text)
+        interactor.retrieveEmotionalAnalysis(for: viewModel.text)
     }
     
     func didRetrieveEmotionalAnalysis(result: EmotionalAnalysisResult) {
         guard let viewModel = view?.tweetViewModel else { return }
-        view?.tweetViewModel = ViewModel.init(with: viewModel, status: .loading)
+        view?.tweetViewModel = ViewModel.init(with: viewModel, analysisResult: result)
     }
     
     private struct ViewModel: TweetViewModel {
