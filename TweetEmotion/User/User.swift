@@ -9,6 +9,7 @@
 import Foundation
 
 struct User: Codable {
+    let id: String?
     let name: String?
     let screenName: String?
     let protected: Bool?
@@ -16,6 +17,7 @@ struct User: Codable {
     let profileImageURL: String?
     
     private enum CodingKeys: String, CodingKey {
+        case id = "id_str"
         case name
         case screenName = "screen_name"
         case protected
