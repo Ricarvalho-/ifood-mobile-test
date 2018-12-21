@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */; };
+		BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0E721CC6F580050EC71 /* ChainManager.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
 		BDF0E54A21C8577200B3E5C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54921C8577200B3E5C9 /* ViewController.swift */; };
 		BDF0E54D21C8577200B3E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E54B21C8577200B3E5C9 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		BD686FE321CB547900346D87 /* EmotionalAnalysisInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionalAnalysisInteractor.swift; sourceTree = "<group>"; };
+		BD9BB0E721CC6F580050EC71 /* ChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainManager.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF0E54921C8577200B3E5C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD9BB0E421CC6EFE0050EC71 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BB0E721CC6F580050EC71 /* ChainManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		BDF0E53B21C8577200B3E5C9 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 				BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */,
 				BDF0E55621C8577400B3E5C9 /* Info.plist */,
 				BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */,
+				BD9BB0E421CC6EFE0050EC71 /* Common */,
 				BDF2A23821CB1BD000FD4CD9 /* Timeline */,
 				BDF2A23921CB1C3C00FD4CD9 /* Tweet */,
 				BDF2A23A21CB1C4D00FD4CD9 /* User */,
@@ -322,6 +333,7 @@
 				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
 				BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */,
 				BDF2A25021CB393600FD4CD9 /* User.swift in Sources */,
+				BD9BB0E821CC6F580050EC71 /* ChainManager.swift in Sources */,
 				BD686FE421CB547900346D87 /* EmotionalAnalysisInteractor.swift in Sources */,
 				BDF0E58321C8A07D00B3E5C9 /* TweetDetailPresenter.swift in Sources */,
 				BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */,
