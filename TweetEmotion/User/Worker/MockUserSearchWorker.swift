@@ -10,6 +10,11 @@ import Foundation
 
 class MockUserSearchWorker: UserSearchWorker {
     func fetchUser(with screenName: String, _ completion: (User?) -> Void) {
+        guard !(screenName.contains("inexistent")) else {
+            completion(nil)
+            return
+        }
+        
         let json = """
 {
     "id_str": "\(String(screenName.shuffled()))",
