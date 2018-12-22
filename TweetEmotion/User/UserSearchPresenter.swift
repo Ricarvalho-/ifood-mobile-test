@@ -50,7 +50,7 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
         schedulledTimer?.invalidate()
         guard term.count > 0 else { return }
         
-        schedulledTimer = Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false, block: { [weak self] _ in
+        schedulledTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in
             self?.didElapsedDelayToPerform(search: term)
         })
     }
