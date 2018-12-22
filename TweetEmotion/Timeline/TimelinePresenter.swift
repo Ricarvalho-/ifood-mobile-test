@@ -27,7 +27,7 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     
     required init(with view: TimelineView) {
         self.view = view
-//        view.timelineViewModel = TimelineStatus.empty.viewModel
+        view.timelineViewModel = TimelineStatus.empty.viewModel
     }
     
     func loadMoreTweets() {
@@ -42,7 +42,7 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     
     private func stopLoadingAndSetViewModel(for status: TimelineStatus) {
         view?.stopTimelineLoading()
-//        view?.timelineViewModel = status.viewModel
+        view?.timelineViewModel = status.viewModel
     }
     
     private struct ViewModel: TweetViewModel {
@@ -72,7 +72,7 @@ extension TimelinePresenterImpl: UserSearchDelegate {
     func didUpdateToValidUser(_ user: User) {
         view?.clearTweetViewModels()
         view?.startTimelineLoading()
-//        view?.timelineViewModel = TimelineStatus.empty.viewModel
+        view?.timelineViewModel = TimelineStatus.empty.viewModel
         interactor.retrieveInitialTweets(for: user)
     }
     
@@ -100,18 +100,22 @@ private enum TimelineStatus {
     case privateUser
     case userNotFound
     
-    /*
     var viewModel: TimelineViewModel {
         switch self {
         case .empty:
-            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.lightGray)
+            return TimelineViewModel(message: "Type user's screen name to view tweets",
+                                     image: UIImage(named: "email"),
+                                     color: UIColor.lightGray)
         case .filled:
             return TimelineViewModel(message: nil, image: nil, color: UIColor.white)
         case .privateUser:
-            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.gray)
+            return TimelineViewModel(message: "Private account",
+                                     image: UIImage(named: "lock"),
+                                     color: UIColor.gray)
         case .userNotFound:
-            return TimelineViewModel(message: <#T##String#>, image: <#T##UIImage#>, color: UIColor.orange)
+            return TimelineViewModel(message: "User not found",
+                                     image: UIImage(named: "mood_bad"),
+                                     color: UIColor.orange)
         }
     }
-    */
 }

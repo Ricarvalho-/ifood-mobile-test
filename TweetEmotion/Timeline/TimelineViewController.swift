@@ -13,18 +13,28 @@ protocol TweetCell {
     var detailed: Bool? { get set }
 }
 
+protocol TimelineEmptyView {
+    var timelineViewModel: TimelineViewModel? { get set }
+}
+
 class TimelineViewController: UIViewController, TimelineView {
     @IBOutlet weak var userSearchView: UserSearchViewImpl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var emptyView: TimelineBackgroundView!
     
-    var timelineViewModel: TimelineViewModel?
     private var viewModels = [(tweet: TweetViewModel, detailed: Bool)]()
     private lazy var presenter = TimelinePresenterImpl(with: self)
+    var timelineViewModel: TimelineViewModel? {
+        didSet {
+            emptyView?.timelineViewModel = timelineViewModel
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userSearchView.presenter = UserSearchPresenterImpl(with: userSearchView, delegate: presenter)
+        tableView.backgroundView = emptyView
     }
     
     func startTimelineLoading() {
@@ -78,11 +88,6 @@ extension TimelineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModels[indexPath.row].detailed = !viewModels[indexPath.row].detailed
-//        if var cell = tableView.cellForRow(at: indexPath) as? TweetCell {
-//            cell.detailed = viewModels[indexPath.row].detailed
-//        }
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
         tableView.reloadRows(at: [indexPath], with: .fade)
     }
     
