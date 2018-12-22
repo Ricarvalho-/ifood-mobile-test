@@ -32,6 +32,7 @@
 		BDF2A24C21CB1F4400FD4CD9 /* TimelineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */; };
 		BDF2A24E21CB392700FD4CD9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24D21CB392700FD4CD9 /* Tweet.swift */; };
 		BDF2A25021CB393600FD4CD9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2A24F21CB393600FD4CD9 /* User.swift */; };
+		BDFC3B3621CDC59D001C06BD /* TimelineBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFC3B3521CDC59D001C06BD /* TimelineBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModel.swift; sourceTree = "<group>"; };
 		BDF2A24D21CB392700FD4CD9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		BDF2A24F21CB393600FD4CD9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BDFC3B3521CDC59D001C06BD /* TimelineBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9BB0ED21CCA9FA0050EC71 /* TimelineViewController.swift */,
+				BDFC3B3521CDC59D001C06BD /* TimelineBackgroundView.swift */,
 				BDF2A23B21CB1C9600FD4CD9 /* TimelinePresenter.swift */,
 				BDF2A23D21CB1CAD00FD4CD9 /* TimelineInteractor.swift */,
 				BDF2A24B21CB1F4400FD4CD9 /* TimelineViewModel.swift */,
@@ -384,6 +387,7 @@
 				BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */,
 				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
 				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
+				BDFC3B3621CDC59D001C06BD /* TimelineBackgroundView.swift in Sources */,
 				BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */,
 				BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */,
 			);
