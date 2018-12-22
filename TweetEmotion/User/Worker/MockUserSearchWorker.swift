@@ -13,10 +13,10 @@ class MockUserSearchWorker: UserSearchWorker {
         let json = """
 {
     "id_str": "\(String(screenName.shuffled()))",
-    "name": "\(screenName.uppercased())",
+    "name": "\(String(screenName.shuffled()).localizedCapitalized)",
     "screen_name": "\(screenName)",
-    "protected": false,
-    "verified": true,
+    "protected": \(screenName.contains("private")),
+    "verified": \(screenName.contains("verified")),
     "profile_image_url_https": ""
 }
 """

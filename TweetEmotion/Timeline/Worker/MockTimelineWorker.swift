@@ -11,15 +11,15 @@ import Foundation
 class MockTimelineWorker: TimelineWorker {
     func fetchTweets(after last: Tweet?, for user: User, _ completion: ([Tweet]?) -> Void) {
         var tweets = [Tweet]()
-        for index in 1...20 {
+        for index in 1...50 {
+            let shuffledScreenName = String((user.screenName?.shuffled() ?? [Character]()))
             let json = """
 {
-    "created_at": "Fri Dec 21 13:28:47 +0000 2018",
+    "created_at": "Fri Dec 21 \(index % 12 * 2):\(index % 20 * 3):47 +0000 2018",
     "id_str": "\(String(index))",
-    "text": "\((user.screenName ?? "") + String(index * 5))",
-    "retweet_count": \(index % 5),
-    "favorite_count":  \(index % 4),
-    "truncated": false
+    "text": "\(shuffledScreenName + String(index) + String(Array.init(repeating: "*", count: index)))",
+    "retweet_count": \(index % 10 + index * 20),
+    "favorite_count":  \(index % 5 + index * 35)
 }
 """
             guard let jsonData = json.data(using: .utf8) else {
@@ -30,7 +30,6 @@ class MockTimelineWorker: TimelineWorker {
                 tweets.append(tweet)
             }
         }
-        
         completion(tweets)
     }
     
