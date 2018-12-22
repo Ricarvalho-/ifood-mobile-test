@@ -29,12 +29,16 @@ class TweetTableViewCell: UITableViewCell, TweetCell, TweetDetailView {
             switch tweetViewModel?.emotionalStatus ?? TweetEmotionalStatus.none {
             case .positive:
                 cardContainerView.backgroundColor = UIColor.yellow
+                emotionImageView.image = UIImage(named: "sentiment_positive")
             case .neutral:
                 cardContainerView.backgroundColor = UIColor.lightGray
+                emotionImageView.image = UIImage(named: "sentiment_neutral")
             case .negative:
                 cardContainerView.backgroundColor = UIColor.blue
+                emotionImageView.image = UIImage(named: "sentiment_negative")
             default:
                 cardContainerView.backgroundColor = UIColor.groupTableViewBackground
+                emotionImageView.image = nil
             }
         }
     }

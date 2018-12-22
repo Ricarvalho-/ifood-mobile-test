@@ -35,7 +35,8 @@ class UserSearchViewImpl: UIView, UserSearchView {
         nameLabel.text = viewModel.name
         nameLabel.isHidden = false
         verifiedBadgeImageView.isHidden = !viewModel.verified
-        profileImageView.isHidden = viewModel.profileImageURL != nil
+        profileImageView.isHidden = false
+        profileImageView.image = UIImage(named: "account_circle") // FIXME: Load image from URL
     }
     
     func clearUserViewModel() {
