@@ -14,6 +14,7 @@ protocol TweetDetailView: class {
 
 protocol TweetDetailPresenter {
     func retrieveTweetEmotionalStatus()
+    func cancelTweetEmotionalStatusRetrieval()
     init(with view: TweetDetailView)
 }
 
@@ -29,6 +30,10 @@ class TweetDetailPresenterImpl: TweetDetailPresenter, EmotionalAnalysisInteracto
         guard let viewModel = view?.tweetViewModel else { return }
         view?.tweetViewModel = ViewModel.init(with: viewModel, status: .loading)
         interactor.retrieveEmotionalAnalysis(for: viewModel.text)
+    }
+    
+    func cancelTweetEmotionalStatusRetrieval() {
+        interactor.cancelPendingTasks()
     }
     
     func didRetrieveEmotionalAnalysis(result: EmotionalAnalysisResult) {

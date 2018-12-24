@@ -64,7 +64,9 @@ class TimelineInteractorImpl: TimelineInteractor {
     private func start(_ worker: TimelineWorker, with params: (user: User, tweets: [Tweet])) {
         worker.fetchTweets(after: params.tweets.first, for: params.user) { [weak self] results in
             guard let results = results else {
-                self?.workerChainManager.startNext(with: params)
+                if !(self?.workerChainManager.startNext(with: params) ?? false) {
+                    self?.workerChainManager.begin(with: params)
+                }
                 return
             }
             self?.workerChainManager.stop()

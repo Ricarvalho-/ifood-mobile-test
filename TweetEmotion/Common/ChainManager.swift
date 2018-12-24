@@ -26,17 +26,20 @@ class ChainManager<Element, Parameter> {
     func begin(with param: Parameter) {
         stop()
         chainedElements.append(contentsOf: elements)
-        startNext(with: param)
+        if !startNext(with: param) {
+            stop()
+        }
     }
     
-    func startNext(with param: Parameter) {
+    func startNext(with param: Parameter) -> Bool {
         guard !chainedElements.isEmpty else {
             currentElement = nil
-            return
+            return false
         }
         let current = chainedElements.removeFirst()
         currentElement = current
         onStart(current, param)
+        return true
     }
     
     func stop() {

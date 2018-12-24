@@ -18,6 +18,7 @@ protocol TimelineView: class {
 
 protocol TimelinePresenter {
     func loadMoreTweets()
+    func cancelTweetsRetrieval()
     init(with view: TimelineView)
 }
 
@@ -33,6 +34,11 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     func loadMoreTweets() {
         view?.startTimelineLoading()
         interactor.retrieveMoreTweets()
+    }
+    
+    func cancelTweetsRetrieval() {
+        view?.stopTimelineLoading()
+        interactor.cancelPendingTasks()
     }
     
     func didRetrieveTweets(_ tweets: [Tweet]) {

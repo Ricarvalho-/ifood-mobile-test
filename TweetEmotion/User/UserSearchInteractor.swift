@@ -28,7 +28,7 @@ class UserSearchInteractorImpl: UserSearchInteractor {
     weak var delegate: UserSearchInteractorDelegate?
     
     private lazy var workerChainManager = ChainManager<UserSearchWorker, String>(
-        with: [MockUserSearchWorker(), ErrorWorker()],
+        with: [MockUserSearchWorker()],
         onEachStart: { [weak self] worker, screenName in
             self?.start(worker, with: screenName)
         },
@@ -46,16 +46,13 @@ class UserSearchInteractorImpl: UserSearchInteractor {
     }
     
     private func start(_ worker: UserSearchWorker, with screenName: String) {
-        guard !(worker is ErrorWorker) else {
-            DispatchQueue.main.async { [weak self] in
-                self?.delegate?.didNotFoundUserToRetrieve()
-            }
-            return
-        }
-        
         worker.fetchUser(with: screenName) { [weak self] result in
             guard let result = result else {
-                self?.workerChainManager.startNext(with: screenName)
+                if !(self?.workerChainManager.startNext(with: screenName) ?? false) {
+                    DispatchQueue.main.async {
+                        self?.delegate?.didNotFoundUserToRetrieve()
+                    }
+                }
                 return
             }
             self?.workerChainManager.stop()
@@ -67,15 +64,5 @@ class UserSearchInteractorImpl: UserSearchInteractor {
     
     func cancelPendingTasks() {
         workerChainManager.stop()
-    }
-}
-
-private class ErrorWorker: UserSearchWorker {
-    func fetchUser(with screenName: String, _ completion: (User?) -> Void) {
-        completion(nil)
-    }
-    
-    func cancelFetch() {
-        
     }
 }

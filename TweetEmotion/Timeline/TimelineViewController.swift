@@ -92,8 +92,19 @@ extension TimelineViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if viewModels.count - indexPath.row <= 5 {
-            presenter.loadMoreTweets()
+        guard viewModels.count - indexPath.row <= 5 else {
+            if shouldCancelRetrieval() {
+                presenter.cancelTweetsRetrieval()
+            }
+            return
+        }
+        presenter.loadMoreTweets()
+    }
+    
+    private func shouldCancelRetrieval() -> Bool {
+        guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return true }
+        return visibleIndexPaths.reduce(true) { previousResult, indexPath in
+            previousResult && viewModels.count - indexPath.row > 5
         }
     }
 }

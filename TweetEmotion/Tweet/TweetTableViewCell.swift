@@ -47,6 +47,8 @@ class TweetTableViewCell: UITableViewCell, TweetCell, TweetDetailView {
         didSet {
             if detailed ?? false {
                 presenter.retrieveTweetEmotionalStatus()
+            } else {
+                presenter.cancelTweetEmotionalStatusRetrieval()
             }
             for view in detailedViews {
                 view.isHidden = !(detailed ?? false)

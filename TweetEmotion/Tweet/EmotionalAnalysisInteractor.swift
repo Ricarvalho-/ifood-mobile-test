@@ -47,7 +47,9 @@ class EmotionalAnalysisInteractorImpl: EmotionalAnalysisInteractor {
     private func start(_ worker: EmotionalAnalysisWorker, with text: String) {
         worker.fetchAnalysis(for: text) { [weak self] result in
             guard let result = result else {
-                self?.workerChainManager.startNext(with: text)
+                if !(self?.workerChainManager.startNext(with: text) ?? false) {
+                    self?.workerChainManager.begin(with: text)
+                }
                 return
             }
             self?.workerChainManager.stop()
