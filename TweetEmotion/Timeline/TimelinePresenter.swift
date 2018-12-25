@@ -24,7 +24,7 @@ protocol TimelinePresenter {
 
 class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     weak var view: TimelineView?
-    private lazy var interactor = TimelineInteractorImpl(with: self)
+    private lazy var interactor: TimelineInteractor = TimelineInteractorImpl(with: self)
     
     required init(with view: TimelineView) {
         self.view = view

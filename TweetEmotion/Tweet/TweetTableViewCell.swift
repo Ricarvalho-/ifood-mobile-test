@@ -17,7 +17,7 @@ class TweetTableViewCell: UITableViewCell, TweetCell, TweetDetailView {
     @IBOutlet weak var cardContainerView: UIView!
     @IBOutlet var detailedViews: [UIView]!
     
-    lazy var presenter = TweetDetailPresenterImpl(with: self)
+    lazy var presenter: TweetDetailPresenter = TweetDetailPresenterImpl(with: self)
     
     var tweetViewModel: TweetViewModel? {
         didSet {

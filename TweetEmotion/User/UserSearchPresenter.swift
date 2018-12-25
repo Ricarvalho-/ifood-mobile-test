@@ -30,7 +30,7 @@ protocol UserSearchPresenter {
 class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate {
     weak var view: UserSearchView?
     weak var delegate: UserSearchDelegate?
-    private lazy var interactor = UserSearchInteractorImpl(with: self)
+    private lazy var interactor: UserSearchInteractor = UserSearchInteractorImpl(with: self)
     private var schedulledTimer: Timer?
     
     required init(with view: UserSearchView, delegate: UserSearchDelegate?) {

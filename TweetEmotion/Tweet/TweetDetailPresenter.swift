@@ -20,7 +20,7 @@ protocol TweetDetailPresenter {
 
 class TweetDetailPresenterImpl: TweetDetailPresenter, EmotionalAnalysisInteractorDelegate {
     weak var view: TweetDetailView?
-    private lazy var interactor = EmotionalAnalysisInteractorImpl(with: self)
+    private lazy var interactor: EmotionalAnalysisInteractor = EmotionalAnalysisInteractorImpl(with: self)
     
     required init(with view: TweetDetailView) {
         self.view = view
