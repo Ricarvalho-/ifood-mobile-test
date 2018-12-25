@@ -9,17 +9,17 @@
 import Foundation
 
 class MockTimelineWorker: TimelineWorker {
-    func fetchTweets(after last: Tweet?, for user: User, _ completion: ([Tweet]?) -> Void) {
+    func fetchTweets(after last: Tweet?, for user: User, completion: ([Tweet]?) -> Void) {
         var tweets = [Tweet]()
         for index in 1...50 {
             let shuffledScreenName = String((user.screenName?.shuffled() ?? [Character]()))
             let json = """
 {
-    "created_at": "Fri Dec 21 \(index % 12 * 2):\(index % 20 * 3):47 +0000 2018",
     "id_str": "\(String(index))",
-    "text": "\(shuffledScreenName + String(index) + String(Array.init(repeating: "*", count: index)))",
+    "full_text": "\(shuffledScreenName + String(index) + String(Array.init(repeating: "*", count: index)))",
     "retweet_count": \(index % 10 + index * 20),
-    "favorite_count":  \(index % 5 + index * 35)
+    "favorite_count":  \(index % 5 + index * 35),
+    "created_at": "Fri Dec 21 \(index % 12 * 2):\(index % 20 * 3):47 +0000 2018"        
 }
 """
             guard let jsonData = json.data(using: .utf8) else {
