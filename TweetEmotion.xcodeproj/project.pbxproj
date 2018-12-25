@@ -17,7 +17,6 @@
 		BD9BB0F221CCBA8F0050EC71 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
 		BDF0E54D21C8577200B3E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E54B21C8577200B3E5C9 /* Main.storyboard */; };
-		BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */; };
 		BDF0E55221C8577400B3E5C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E55121C8577400B3E5C9 /* Assets.xcassets */; };
 		BDF0E55521C8577400B3E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */; };
 		BDF0E56021C8577400B3E5C9 /* TweetEmotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E55F21C8577400B3E5C9 /* TweetEmotionTests.swift */; };
@@ -64,7 +63,6 @@
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDF0E54C21C8577200B3E5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BDF0E54F21C8577200B3E5C9 /* TweetEmotion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TweetEmotion.xcdatamodel; sourceTree = "<group>"; };
 		BDF0E55121C8577400B3E5C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDF0E55421C8577400B3E5C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDF0E55621C8577400B3E5C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				BDF0E55121C8577400B3E5C9 /* Assets.xcassets */,
 				BDF0E55321C8577400B3E5C9 /* LaunchScreen.storyboard */,
 				BDF0E55621C8577400B3E5C9 /* Info.plist */,
-				BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */,
 				BD9BB0E421CC6EFE0050EC71 /* Common */,
 				BDF2A23821CB1BD000FD4CD9 /* Timeline */,
 				BDF2A23921CB1C3C00FD4CD9 /* Tweet */,
@@ -386,7 +383,6 @@
 				BDF2A24421CB1D1400FD4CD9 /* UserSearchInteractor.swift in Sources */,
 				BDF2A23C21CB1C9600FD4CD9 /* TimelinePresenter.swift in Sources */,
 				BDF2A24621CB1E9200FD4CD9 /* TweetViewModel.swift in Sources */,
-				BDF0E55021C8577200B3E5C9 /* TweetEmotion.xcdatamodeld in Sources */,
 				BDFC3B3621CDC59D001C06BD /* TimelineBackgroundView.swift in Sources */,
 				BD9BB0EA21CC92D20050EC71 /* MockUserSearchWorker.swift in Sources */,
 				BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */,
@@ -714,19 +710,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BDF0E54E21C8577200B3E5C9 /* TweetEmotion.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BDF0E54F21C8577200B3E5C9 /* TweetEmotion.xcdatamodel */,
-			);
-			currentVersion = BDF0E54F21C8577200B3E5C9 /* TweetEmotion.xcdatamodel */;
-			path = TweetEmotion.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BDF0E53C21C8577200B3E5C9 /* Project object */;
 }
