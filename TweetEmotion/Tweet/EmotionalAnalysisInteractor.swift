@@ -27,7 +27,7 @@ class EmotionalAnalysisInteractorImpl: EmotionalAnalysisInteractor {
     weak var delegate: EmotionalAnalysisInteractorDelegate?
     
     private lazy var workerChainManager = ChainManager<EmotionalAnalysisWorker, String>(
-        with: [MockEmotionalAnalysisWorker()],
+        with: [GoogleAPIEmotionalAnalysisWorker()],
         onEachStart: { [weak self] worker, text in
             self?.start(worker, with: text)
         },

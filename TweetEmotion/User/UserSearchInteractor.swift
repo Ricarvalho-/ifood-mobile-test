@@ -28,7 +28,7 @@ class UserSearchInteractorImpl: UserSearchInteractor {
     weak var delegate: UserSearchInteractorDelegate?
     
     private lazy var workerChainManager = ChainManager<UserSearchWorker, String>(
-        with: [MockUserSearchWorker()],
+        with: [TwitterAPIUserSearchWorker()],
         onEachStart: { [weak self] worker, screenName in
             self?.start(worker, with: screenName)
         },

@@ -31,7 +31,7 @@ class TimelineInteractorImpl: TimelineInteractor {
     private var scheduleMoreWorkAfterCompletion = false
     
     private lazy var workerChainManager = ChainManager<TimelineWorker, (User, [Tweet])>(
-        with: [MockTimelineWorker()],
+        with: [TwitterAPITimelineWorker()],
         onEachStart: { [weak self] worker, params in
             self?.start(worker, with: params)
         },
