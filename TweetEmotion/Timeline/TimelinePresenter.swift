@@ -25,6 +25,7 @@ protocol TimelinePresenter {
 class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     weak var view: TimelineView?
     private lazy var interactor: TimelineInteractor = TimelineInteractorImpl(with: self)
+    private var debounceTimer: Timer?
     
     required init(with view: TimelineView) {
         self.view = view
@@ -32,13 +33,19 @@ class TimelinePresenterImpl: TimelinePresenter, TimelineInteractorDelegate {
     }
     
     func loadMoreTweets() {
-        view?.startTimelineLoading()
-        interactor.retrieveMoreTweets()
+        debounceTimer?.invalidate()
+        debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+            self?.view?.startTimelineLoading()
+            self?.interactor.retrieveMoreTweets()
+        })
     }
     
     func cancelTweetsRetrieval() {
-        view?.stopTimelineLoading()
-        interactor.cancelPendingTasks()
+        debounceTimer?.invalidate()
+        debounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+            self?.view?.stopTimelineLoading()
+            self?.interactor.cancelPendingTasks()
+        })
     }
     
     func didRetrieveTweets(_ tweets: [Tweet]) {
