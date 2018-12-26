@@ -85,6 +85,10 @@ extension TimelineViewController: UITableViewDataSource {
 }
 
 extension TimelineViewController: UITableViewDelegate {
+    private var loadThreshold: Int {
+        return max(10, viewModels.count / 10) // 10% of viewModels or 10 if less
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModels[indexPath.row].detailed = !viewModels[indexPath.row].detailed
@@ -92,7 +96,7 @@ extension TimelineViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard viewModels.count - indexPath.row <= 5 else {
+        guard distanceToEnd(from: indexPath) <= loadThreshold else {
             if shouldCancelRetrieval() {
                 presenter.cancelTweetsRetrieval()
             }
@@ -103,8 +107,12 @@ extension TimelineViewController: UITableViewDelegate {
     
     private func shouldCancelRetrieval() -> Bool {
         guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return true }
-        return visibleIndexPaths.reduce(true) { previousResult, indexPath in
-            previousResult && viewModels.count - indexPath.row > 5
+        return visibleIndexPaths.reduce(true) { allPreviousAreDistantEnough, evaluatedIndexPath in
+            allPreviousAreDistantEnough && distanceToEnd(from: evaluatedIndexPath) > loadThreshold
         }
+    }
+    
+    private func distanceToEnd(from indexPath: IndexPath) -> Int {
+        return viewModels.count - indexPath.row
     }
 }
