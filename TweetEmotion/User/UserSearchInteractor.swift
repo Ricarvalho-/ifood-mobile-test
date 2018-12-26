@@ -14,7 +14,7 @@ protocol UserSearchInteractorDelegate: class {
 }
 
 protocol UserSearchWorker {
-    func fetchUser(with screenName: String, _ completion: (User?) -> Void)
+    func fetchUser(with screenName: String, completion: @escaping (User?) -> Void)
     func cancelFetch()
 }
 

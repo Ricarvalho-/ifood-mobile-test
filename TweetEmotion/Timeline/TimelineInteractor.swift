@@ -13,7 +13,7 @@ protocol TimelineInteractorDelegate: class {
 }
 
 protocol TimelineWorker {
-    func fetchTweets(after last: Tweet?, for user: User, _ completion: ([Tweet]?) -> Void)
+    func fetchTweets(after last: Tweet?, for user: User, completion: @escaping ([Tweet]?) -> Void)
     func cancelFetch()
 }
 

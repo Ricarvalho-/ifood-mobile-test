@@ -9,7 +9,7 @@
 import Foundation
 
 class MockUserSearchWorker: UserSearchWorker {
-    func fetchUser(with screenName: String, _ completion: (User?) -> Void) {
+    func fetchUser(with screenName: String, completion: @escaping (User?) -> Void) {
         guard !(screenName.contains("inexistent")) else {
             completion(nil)
             return
