@@ -17,6 +17,10 @@ protocol EmotionalAnalysisWorker {
     func cancelFetch()
 }
 
+protocol EmotionalAnalysisCacheWorker {
+    func cacheAnalysis(result: EmotionalAnalysisResult, for text: String)
+}
+
 protocol EmotionalAnalysisInteractor {
     func retrieveEmotionalAnalysis(for text: String)
     func cancelPendingTasks()
@@ -25,9 +29,10 @@ protocol EmotionalAnalysisInteractor {
 
 class EmotionalAnalysisInteractorImpl: EmotionalAnalysisInteractor {
     weak var delegate: EmotionalAnalysisInteractorDelegate?
+    private let workers: [EmotionalAnalysisWorker] = [InMemoryCacheEmotionalAnalysisWorker(), GoogleAPIEmotionalAnalysisWorker()]
     
     private lazy var workerChainManager = ChainManager<EmotionalAnalysisWorker, String>(
-        with: [GoogleAPIEmotionalAnalysisWorker()],
+        with: workers,
         onEachStart: { [weak self] worker, text in
             self?.start(worker, with: text)
         },
@@ -53,6 +58,7 @@ class EmotionalAnalysisInteractorImpl: EmotionalAnalysisInteractor {
                 return
             }
             self?.workerChainManager.stop()
+            self?.workers.filter { $0 is EmotionalAnalysisCacheWorker }.forEach { ($0 as! EmotionalAnalysisCacheWorker).cacheAnalysis(result: result, for: text) }
             DispatchQueue.main.async {
                 self?.delegate?.didRetrieveEmotionalAnalysis(result: result)
             }

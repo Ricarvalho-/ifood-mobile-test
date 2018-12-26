@@ -35,7 +35,6 @@ The project have the following CocoaPods external dependencies by now:
 UI basically utilizes UIStackViews and AutoLayout constraints.
 
 ## Known issues/Planned but not implemented features
-* Sentimental analysis in-memory cache worker (because of table view's scroll)
 * UI/Layout improvements
 * Unit/UI tests
 * Localization
