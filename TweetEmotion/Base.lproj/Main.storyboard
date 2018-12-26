@@ -72,13 +72,14 @@
                                                                             <constraint firstAttribute="height" constant="32" id="a8T-3e-hQu"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-Ei-mkh">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nwt-Ei-mkh">
                                                                         <rect key="frame" x="40" y="1" width="314" height="30"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="username"/>
                                                                         <connections>
                                                                             <action selector="textFieldValueDidChange:" destination="lyv-fD-X9M" eventType="editingChanged" id="841-nV-f24"/>
+                                                                            <outlet property="delegate" destination="lyv-fD-X9M" id="OhC-8a-Pev"/>
                                                                         </connections>
                                                                     </textField>
                                                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5k1-Vc-5Dj">

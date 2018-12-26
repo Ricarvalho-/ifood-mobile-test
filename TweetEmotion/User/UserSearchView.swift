@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-class UserSearchViewImpl: UIView, UserSearchView {
+class UserSearchViewImpl: UIView, UserSearchView, UITextFieldDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var verifiedBadgeImageView: UIImageView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -22,6 +22,11 @@ class UserSearchViewImpl: UIView, UserSearchView {
             return
         }
         presenter?.didChangeSearchTerm(text)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
     
     func startUserLoading() {
