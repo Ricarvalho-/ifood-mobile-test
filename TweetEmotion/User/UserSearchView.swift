@@ -45,7 +45,8 @@ class UserSearchViewImpl: UIView, UserSearchView, UITextFieldDelegate {
         
         if let imageURL = viewModel.profileImageURL {
             profileImageView.af_setImage(withURL: imageURL,
-                                         placeholderImage: UIImage(named: "account_circle"))
+                                         placeholderImage: UIImage(named: "account_circle"),
+                                         filter: CircleFilter())
         }
     }
     
