@@ -9,7 +9,7 @@
 import Foundation
 
 class MockEmotionalAnalysisWorker: EmotionalAnalysisWorker {
-    func fetchAnalysis(for text: String, _ completion: (EmotionalAnalysisResult?) -> Void) {
+    func fetchAnalysis(for text: String, completion: (EmotionalAnalysisResult?) -> Void) {
         switch text.count % 4 {
         case 0:
             completion(.neutral)

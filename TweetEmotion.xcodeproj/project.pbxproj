@@ -19,6 +19,7 @@
 		BD9BB0F021CCB9DF0050EC71 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0EF21CCB9DF0050EC71 /* TweetTableViewCell.swift */; };
 		BD9BB0F221CCBA8F0050EC71 /* UserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */; };
 		BDC60B1921D2607F000C6BC1 /* TwitterAPIUserSearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC60B1821D2607F000C6BC1 /* TwitterAPIUserSearchWorker.swift */; };
+		BDC60B1B21D26CDB000C6BC1 /* GoogleAPIEmotionalAnalysisWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC60B1A21D26CDB000C6BC1 /* GoogleAPIEmotionalAnalysisWorker.swift */; };
 		BDC60B1D21D28BFD000C6BC1 /* TwitterAPITimelineWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC60B1C21D28BFD000C6BC1 /* TwitterAPITimelineWorker.swift */; };
 		BDC60B1F21D297CB000C6BC1 /* TwitterAccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC60B1E21D297CB000C6BC1 /* TwitterAccessTokenManager.swift */; };
 		BDF0E54821C8577200B3E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0E54721C8577200B3E5C9 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		BD9BB0EF21CCB9DF0050EC71 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		BD9BB0F121CCBA8F0050EC71 /* UserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchView.swift; sourceTree = "<group>"; };
 		BDC60B1821D2607F000C6BC1 /* TwitterAPIUserSearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPIUserSearchWorker.swift; sourceTree = "<group>"; };
+		BDC60B1A21D26CDB000C6BC1 /* GoogleAPIEmotionalAnalysisWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPIEmotionalAnalysisWorker.swift; sourceTree = "<group>"; };
 		BDC60B1C21D28BFD000C6BC1 /* TwitterAPITimelineWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPITimelineWorker.swift; sourceTree = "<group>"; };
 		BDC60B1E21D297CB000C6BC1 /* TwitterAccessTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAccessTokenManager.swift; sourceTree = "<group>"; };
 		BDF0E54421C8577200B3E5C9 /* TweetEmotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetEmotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9BB0E221CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift */,
+				BDC60B1A21D26CDB000C6BC1 /* GoogleAPIEmotionalAnalysisWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				BD9BB0E321CC4B620050EC71 /* MockEmotionalAnalysisWorker.swift in Sources */,
 				BD9BB0F221CCBA8F0050EC71 /* UserSearchView.swift in Sources */,
 				BDF2A24821CB1EA300FD4CD9 /* UserViewModel.swift in Sources */,
+				BDC60B1B21D26CDB000C6BC1 /* GoogleAPIEmotionalAnalysisWorker.swift in Sources */,
 				BDF2A23E21CB1CAD00FD4CD9 /* TimelineInteractor.swift in Sources */,
 				BD9BB0F021CCB9DF0050EC71 /* TweetTableViewCell.swift in Sources */,
 				BD9BB0EE21CCA9FA0050EC71 /* TimelineViewController.swift in Sources */,

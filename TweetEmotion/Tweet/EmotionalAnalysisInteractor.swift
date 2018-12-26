@@ -13,7 +13,7 @@ protocol EmotionalAnalysisInteractorDelegate: class {
 }
 
 protocol EmotionalAnalysisWorker {
-    func fetchAnalysis(for text: String, _ completion: (EmotionalAnalysisResult?) -> Void)
+    func fetchAnalysis(for text: String, completion: @escaping (EmotionalAnalysisResult?) -> Void)
     func cancelFetch()
 }
 
