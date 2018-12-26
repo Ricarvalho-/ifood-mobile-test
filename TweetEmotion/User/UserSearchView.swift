@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class UserSearchViewImpl: UIView, UserSearchView {
     @IBOutlet weak var nameLabel: UILabel!
@@ -35,8 +36,12 @@ class UserSearchViewImpl: UIView, UserSearchView {
         nameLabel.text = viewModel.name
         nameLabel.isHidden = false
         verifiedBadgeImageView.isHidden = !viewModel.verified
-        profileImageView.isHidden = false
-        profileImageView.image = UIImage(named: "account_circle") // FIXME: Load image from URL
+        profileImageView.isHidden = viewModel.profileImageURL == nil
+        
+        if let imageURL = viewModel.profileImageURL {
+            profileImageView.af_setImage(withURL: imageURL,
+                                         placeholderImage: UIImage(named: "account_circle"))
+        }
     }
     
     func clearUserViewModel() {
@@ -45,5 +50,6 @@ class UserSearchViewImpl: UIView, UserSearchView {
         verifiedBadgeImageView.isHidden = true
         profileImageView.image = nil
         profileImageView.isHidden = true
+        profileImageView.af_cancelImageRequest()
     }
 }
