@@ -39,15 +39,15 @@ class UserSearchPresenterImpl: UserSearchPresenter, UserSearchInteractorDelegate
     }
     
     func didChangeSearchTerm(_ searchTerm: String) {
+        schedulledTimer?.invalidate()
+        interactor.cancelPendingTasks()
         view?.stopUserLoading()
         view?.clearUserViewModel()
-        interactor.cancelPendingTasks()
         delegate?.didInvalidateCurrentUser()
         scheduleNewSearch(searchTerm)
     }
     
     private func scheduleNewSearch(_ term: String) {
-        schedulledTimer?.invalidate()
         guard term.count > 0 else { return }
         
         schedulledTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in

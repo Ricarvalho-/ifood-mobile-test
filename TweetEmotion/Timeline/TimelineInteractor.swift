@@ -55,6 +55,7 @@ class TimelineInteractorImpl: TimelineInteractor {
             scheduleMoreWorkAfterCompletion = true
             return
         }
+        scheduleMoreWorkAfterCompletion = false
         let tweets = self.tweets
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.workerChainManager.begin(with: (user, tweets))
@@ -65,7 +66,9 @@ class TimelineInteractorImpl: TimelineInteractor {
         worker.fetchTweets(after: params.tweets.last, for: params.user) { [weak self] results in
             guard let results = results else {
                 if !(self?.workerChainManager.startNext(with: params) ?? false) {
-                    self?.workerChainManager.begin(with: params)
+                    DispatchQueue.main.async {
+                        self?.delegate?.didRetrieveTweets([Tweet]())
+                    }
                 }
                 return
             }
